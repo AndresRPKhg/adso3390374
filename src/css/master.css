@@ -1,0 +1,91 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;800&display=swap');
+
+/* reset */
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+html, body{
+    margin: 0; 
+    padding: 0;
+    
+}
+
+body{
+    font-family: poppins;
+    font-weight: 500;
+    background-color: #000000;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23220000' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%23440000' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%23660000' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%23880000' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%23A00' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;
+color: #fff;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+}
+/*main*/
+main {
+    padding: 1rem;
+    width: 380px;
+    header.mainmenu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        h1 {
+            font-weight: 800;
+            border-bottom: 2px solid #fff;
+        }
+        h2 {
+            font-weight: 300;
+            font-size: 1.2rem;
+        }
+        h3 {
+            font-weight: 500;
+            margin: 0%;
+        }
+        h4 {
+            font-weight: 300;
+            font-size: 0.8rem;
+            margin: 0%;
+        }
+         img {
+            border: 6px solid #fff;
+            border-radius: 50%;
+            height: 280px;
+            object-fit: cover;
+            width: 280px;
+        }
+    }
+    menu.mainmenu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 0.6rem;
+        a:is(:link, :visited){
+            background-color: #6669;
+            border-radius: 8rem;
+            color: #0009;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            text-decoration: none;
+            padding: 0.4rem;
+            width: 300px;
+            span {
+                background-color: #874e19;
+                color: #666;
+                font-size: 1.6rem;
+                border-radius: 4rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 70px;
+                width: 70px;
+            }
+        }
+    }
+}
