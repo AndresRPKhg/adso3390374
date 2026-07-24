@@ -1,0 +1,14 @@
+      div.flag {
+        background: radial-gradient(circle,
+        red 25%,
+        white 25%
+        );
+        color: black;
+        height: 170px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        margin: 2rem auto;
+        width: 300px;
+      }

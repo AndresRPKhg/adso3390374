@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>05-advanced-selectors</title>
+    <link rel="stylesheet" href="../src/css/master.css" />
+    <style>
+        section > p {
+            padding: 0.4rem;
+            border: 1px solid #6669;
+        }
+        section > p:nth-child(2) {
+            background-color: rgba(255, 217, 0, 0.623);
+            color: olive;
+        }
+    </style>
+  </head>
+  <body class="css">
+    <a href="index.html" class="btn-home">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        fill="#000000"
+        viewBox="0 0 256 256"
+      >
+        <path
+          d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm48-88a8,8,0,0,1-8,8H107.31l18.35,18.34a8,8,0,0,1-11.32,11.32l-32-32a8,8,0,0,1,0-11.32l32-32a8,8,0,0,1,11.32,11.32L107.31,120H168A8,8,0,0,1,176,128Z"
+        ></path>
+      </svg>
+    </a>
+    <main>
+      <header class="mainmenu">
+        <h1>05-advanced-selectors</h1>
+        <ul>
+            <li>- Children (>)</li>
+            <li>- Adjacent/Sibling (+)</li>
+            <li>- Attribute [class]</li>
+        </ul>
+      </header>
+      <section>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum ex numquam, est nesciunt blanditiis repudiandae quidem deserunt, sapiente consequuntur, possimus voluptas odio doloremque ad animi eius. Quos mollitia fuga reprehenderit!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ipsam labore accusantium illo quisquam, est qui natus? Quos quam voluptates illum. Iste a aliquam odit temporibus reiciendis commodi asperiores expedita.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa nostrum deleniti laudantium soluta. Neque labore minus, quod modi perspiciatis omnis reiciendis iusto facilis, amet laborum maxime velit numquam provident harum.</p>
+      </section>
+    </main>
+  </body>
+</html>
