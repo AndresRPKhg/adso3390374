@@ -1,0 +1,204 @@
+﻿<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>15-position</title>
+    <link rel="stylesheet" href="../src/css/master.css" />
+    <style>
+      /* Contenedor padre de cada ejemplo */
+      .demo {
+        position: relative;
+        height: 140px;
+        margin-bottom: 25px;
+        border: 2px dashed #fff6;
+        border-radius: 6px;
+        padding: 12px;
+        box-sizing: border-box;
+      }
+
+      .demo h3 {
+        margin: 0 0 10px;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        opacity: 0.8;
+      }
+
+      /* Misma lógica del ejercicio 14: cajas box1..box5 dentro de un padre */
+      div, box {
+        border: 2px solid #fff9;
+        border-radius: 6px;
+
+        &.box1 {
+          /* Normal / Static: valor por defecto, ignora top/left */
+          width: 150px;
+          height: 70px;
+          background-color: #222;
+          color: #fff;
+          border: 2px solid deepskyblue;
+
+          position: static;
+          top: 40px;
+          left: 80px;
+        }
+
+        &.box2 {
+          /* Relative: se desplaza desde su posición normal */
+          width: 150px;
+          height: 70px;
+          background-color: #222;
+          color: #fff;
+          border: 2px solid orange;
+
+          position: relative;
+          top: 15px;
+          left: 100px;
+        }
+
+        &.box3 {
+          /* Absolute: respecto al ancestro posicionado (.demo) */
+          width: 150px;
+          height: 70px;
+          background-color: #222;
+          color: #fff;
+          border: 2px solid tomato;
+
+          position: absolute;
+          top: 50px;
+          left: 130px;
+        }
+
+        &.box4 {
+          /* Fixed: fijo a la ventana, esquina inferior derecha */
+          width: 150px;
+          height: 70px;
+          background-color: #222;
+          color: #fff;
+          border: 2px solid gold;
+
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          z-index: 100;
+        }
+
+        &.box5 {
+          /* Sticky: se pega arriba al hacer scroll dentro del contenedor */
+          width: auto;
+          height: auto;
+          padding: 10px;
+          background-color: #143b21;
+          color: #fff;
+          border: 2px solid limegreen;
+
+          position: sticky;
+          top: 0;
+          z-index: 10;
+        }
+      }
+
+      /* Contenedor alto para que el sticky se pegue con el scroll normal de la página */
+      .sticky-wrap {
+        min-height: 70vh;
+        border: 2px dashed #fff6;
+        border-radius: 6px;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      .sticky-wrap .box5 {
+        width: 240px;
+        margin-bottom: 12px;
+      }
+      .sticky-wrap .lorem {
+        font-size: 0.85rem;
+        line-height: 1.6;
+        opacity: 0.9;
+        text-align: justify;
+      }
+    </style>
+  </head>
+  <body class="css">
+    <a href="index.html" class="btn-home">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        fill="#000000"
+        viewBox="0 0 256 256"
+      >
+        <path
+          d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm48-88a8,8,0,0,1-8,8H107.31l18.35,18.34a8,8,0,0,1-11.32,11.32l-32-32a8,8,0,0,1,0-11.32l32-32a8,8,0,0,1,11.32,11.32L107.31,120H168A8,8,0,0,1,176,128Z"
+        ></path>
+      </svg>
+    </a>
+    <main>
+      <header class="mainmenu">
+        <h1>15-position</h1>
+        <ul>
+          <li>- Normal/Static</li>
+          <li>- Relative</li>
+          <li>- Absolute</li>
+          <li>- Fixed</li>
+          <li>- Sticky</li>
+        </ul>
+      </header>
+
+      <section>
+        <div class="demo">
+          <h3>Normal / Static</h3>
+          <div class="box1">Static: ignora top y left</div>
+        </div>
+
+        <div class="demo">
+          <h3>Relative</h3>
+          <div class="box2">Relative: se desplaza desde su lugar</div>
+        </div>
+
+        <div class="demo">
+          <h3>Absolute</h3>
+          <div class="box3">Absolute: respecto al contenedor</div>
+        </div>
+
+        <div class="demo">
+          <h3>Fixed</h3>
+          <div class="box4">Fixed: esquina inferior derecha</div>
+        </div>
+
+        <div class="demo">
+          <h3>Sticky</h3>
+          <div class="sticky-wrap">
+            <div class="box5">Sticky: se pega arriba al hacer scroll</div>
+            <p class="lorem">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Praesentium ea perspiciatis similique delectus eaque, obcaecati
+              explicabo? Porro eaque sint neque dignissimos at? Autem, corporis
+              error fuga et reprehenderit corrupti quidem veritatis, neque
+              accusamus voluptatum itaque. Corrupti nobis ipsam iure quasi
+              optio molestiae eaque odio repellendus nam similique reiciendis
+              harum, repudiandae quisquam perspiciatis labore corporis
+              exercitationem. Quisquam, voluptatum ad similique deleniti
+              voluptate earum tenetur. Aperiam ratione culpa eveniet inventore
+              tempore impedit doloribus dicta accusamus iusto voluptate itaque
+              illo quas, nostrum accusantium expedita corrupti quo harum
+              necessitatibus ipsum! Magni eum enim porro vero reiciendis
+              exercitationem dolor, consequatur facilis nobis corporis dolorum
+              voluptatum quis magnam velit autem modi hic molestiae at quam!
+              Odio, omnis? Repudiandae, aut alias! Optio excepturi consectetur
+              fugit, maxime aperiam quia perferendis. Dolores laudantium beatae
+              aspernatur necessitatibus obcaecati qui nesciunt labore minima
+              dicta perferendis quasi suscipit ad ipsam quos fugiat numquam
+              voluptas nisi placeat, quod quisquam corrupti libero excepturi
+              quibusdam a. Aspernatur, velit! Provident consectetur fugiat,
+              fugit libero modi quis sint dignissimos eveniet vitae, laboriosam
+              sequi nesciunt iste quia quod error rem sed commodi totam,
+              laborum. Vel quos sunt at dolorum nesciunt, atque ut est
+              doloribus fugit fuga beatae aperiam vero deserunt magni ipsa
+              nostrum asperiores esse impedit officiis, incidunt tempore.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

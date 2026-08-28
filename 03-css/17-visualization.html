@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>17-visualization</title>
+    <link rel="stylesheet" href="../src/css/master.css" />
+    <style>
+      /* Contenedor padre de cada ejemplo */
+      .demo {
+        position: relative;
+        margin-bottom: 30px;
+        border: 2px solid #fff6;
+        border-radius: 6px;
+        padding: 12px;
+        box-sizing: border-box;
+      }
+      .demo h3 {
+        margin: 0 0 12px;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        opacity: 0.8;
+        border-bottom: 1px solid #fff3;
+        padding-bottom: 6px;
+      }
+      /* Contenedor interno de cada ejemplo: centra el contenido */
+      .inner {
+        min-height: 70px;
+      }
+      .item {
+        background-color: #222;
+        color: #fff;
+        border: 2px solid deepskyblue;
+        border-radius: 6px;
+        padding: 8px 12px;
+        width: 120px;
+        text-align: center;
+        box-sizing: border-box;
+        font-size: 0.85rem;
+      }
+      .item-a { background-color: #13325a; border-color: deepskyblue; }
+      .item-b { background-color: #5a2c13; border-color: orange; }
+      .item-c { background-color: #5a1336; border-color: hotpink; }
+
+      /* ----- DISPLAY ----- */
+      .disp-block .item {
+        display: block; /* ocupa todo el ancho y apila */
+        margin: 0 auto 8px; /* centrado horizontal */
+      }
+      .disp-inline .item {
+        display: inline-block; /* en línea pero respetando medidas */
+        margin-right: 8px;
+        width: 120px;
+      }
+      .disp-none .item {
+        display: none; /* desaparece sin dejar espacio */
+      }
+      .disp-none .after {
+        margin-top: 10px;
+        opacity: 0.8;
+      }
+      .disp-flex {
+        display: flex; /* contenedor flexible: hijos en fila */
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .disp-grid {
+        display: grid; /* contenedor de rejilla: columnas */
+        grid-template-columns: repeat(3, 120px);
+        justify-content: center;
+        gap: 10px;
+      }
+
+      /* ----- VISIBILITY ----- */
+      .vis-hidden .item {
+        visibility: hidden; /* oculto pero sigue ocupando su espacio */
+      }
+      .vis-hidden .after {
+        margin-top: 10px;
+        opacity: 0.8;
+      }
+
+      /* ----- OVERFLOW ----- */
+      .of-box {
+        width: 260px;
+        height: 100px;
+        background-color: #222;
+        color: #fff;
+        border: 2px solid deepskyblue;
+        border-radius: 6px;
+        padding: 10px;
+        box-sizing: border-box;
+        font-size: 0.8rem;
+      }
+      .of-center {
+        display: flex;
+        justify-content: center;
+      }
+      .of-visible { overflow: visible; }
+      .of-hidden   { overflow: hidden; }
+      .of-scroll   { overflow: scroll; }
+      .of-auto     { overflow: auto; }
+
+      /* ----- Z-INDEX ----- */
+      .zbox {
+        position: absolute;
+        width: 140px;
+        height: 90px;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 0.8rem;
+        text-align: center;
+      }
+      .z-low {
+        left: 90px;
+        top: 60px;
+        background-color: #13325a;
+        border: 2px solid deepskyblue;
+        z-index: 1;
+      }
+      .z-mid {
+        left: 150px;
+        top: 100px;
+        background-color: #5a2c13;
+        border: 2px solid orange;
+        z-index: 2;
+      }
+      .z-high {
+        left: 210px;
+        top: 140px;
+        background-color: #5a1336;
+        border: 2px solid hotpink;
+        z-index: 3;
+      }
+    </style>
+  </head>
+  <body class="css">
+    <a href="index.html" class="btn-home">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        fill="#000000"
+        viewBox="0 0 256 256"
+      >
+        <path
+          d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm48-88a8,8,0,0,1-8,8H107.31l18.35,18.34a8,8,0,0,1-11.32,11.32l-32-32a8,8,0,0,1,0-11.32l32-32a8,8,0,0,1,11.32,11.32L107.31,120H168A8,8,0,0,1,176,128Z"
+        ></path>
+      </svg>
+    </a>
+    <main>
+      <header class="mainmenu">
+        <h1>17-visualization</h1>
+        <ul>
+          <li>- Display: block|inline|none|flex|grid</li>
+          <li>- Visibility: visible|hidden</li>
+          <li>- Overflow: visible|hidden|scroll|auto</li>
+          <li>- Z-Index</li>
+        </ul>
+      </header>
+
+      <section>
+        <!-- DISPLAY -->
+        <div class="demo disp-block">
+          <h3>Display: block</h3>
+          <div class="inner">
+            <div class="item">Bloque 1</div>
+            <div class="item">Bloque 2</div>
+            <div class="item">Bloque 3</div>
+          </div>
+        </div>
+
+        <div class="demo disp-inline">
+          <h3>Display: inline</h3>
+          <div class="inner">
+            <div class="item">En línea</div>
+            <div class="item">En línea</div>
+            <div class="item">En línea</div>
+          </div>
+        </div>
+
+        <div class="demo disp-none">
+          <h3>Display: none</h3>
+          <div class="inner">
+            <div class="item">Este elemento está oculto (display: none)</div>
+            <p class="after">El elemento no ocupa espacio en absoluto.</p>
+          </div>
+        </div>
+
+        <div class="demo disp-flex">
+          <h3>Display: flex</h3>
+          <div class="inner disp-flex">
+            <div class="item item-a">A</div>
+            <div class="item item-b">B</div>
+            <div class="item item-c">C</div>
+            <div class="item item-a">D</div>
+          </div>
+        </div>
+
+        <div class="demo disp-grid">
+          <h3>Display: grid</h3>
+          <div class="inner disp-grid">
+            <div class="item item-a">A</div>
+            <div class="item item-b">B</div>
+            <div class="item item-c">C</div>
+            <div class="item item-a">D</div>
+            <div class="item item-b">E</div>
+            <div class="item item-c">F</div>
+          </div>
+        </div>
+
+        <!-- VISIBILITY -->
+        <div class="demo vis-hidden">
+          <h3>Visibility: hidden</h3>
+          <div class="inner">
+            <div class="item">Este elemento está oculto (visibility: hidden)</div>
+            <p class="after">Pero aquí el espacio que ocupaba sigue reservado.</p>
+          </div>
+        </div>
+
+        <!-- OVERFLOW -->
+        <div class="demo">
+          <h3>Overflow: visible</h3>
+          <div class="inner of-center">
+            <div class="of-box of-visible">
+              Texto muy largo que se sale del contenedor porque el overflow es
+              visible. Lorem ipsum dolor sit amet consectetur.
+            </div>
+          </div>
+        </div>
+
+        <div class="demo">
+          <h3>Overflow: hidden</h3>
+          <div class="inner of-center">
+            <div class="of-box of-hidden">
+              Texto muy largo que se recorta y se oculta al salir del contenedor.
+              Lorem ipsum dolor sit amet consectetur.
+            </div>
+          </div>
+        </div>
+
+        <div class="demo">
+          <h3>Overflow: scroll</h3>
+          <div class="inner of-center">
+            <div class="of-box of-scroll">
+              Texto muy largo que genera una barra de scroll para verlo completo.
+              Lorem ipsum dolor sit amet consectetur.
+            </div>
+          </div>
+        </div>
+
+        <div class="demo">
+          <h3>Overflow: auto</h3>
+          <div class="inner of-center">
+            <div class="of-box of-auto">
+              Texto muy largo que solo muestra barra de scroll cuando hace falta.
+              Lorem ipsum dolor sit amet consectetur.
+            </div>
+          </div>
+        </div>
+
+        <!-- Z-INDEX -->
+        <div class="demo" style="height: 240px;">
+          <h3>Z-Index</h3>
+          <div class="zbox z-low">z-index: 1</div>
+          <div class="zbox z-mid">z-index: 2</div>
+          <div class="zbox z-high">z-index: 3</div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
