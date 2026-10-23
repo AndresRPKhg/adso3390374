@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>30-text-shadow</title>
+    <link rel="stylesheet" href="../src/css/master.css" />
+    <style>
+        section {
+            p.txt {
+                font-size: 2rem;
+                margin-block: 4rem;
+                text-align: center;
+
+                &.txt1 {
+                     color: black;
+                    text-shadow: 0 0 12p white;
+                }
+                &.txt2 {
+                    color: black;
+                    text-shadow: -4px -4px 10px #fff;
+                }
+
+                &.txt3 {
+                    color: #ffffff;
+                    font-size: 6rem;
+                    text-shadow:  0 1px 0 hsl(174,5%,80%),
+	                 0 2px 0 hsl(174,5%,75%),
+	                 0 3px 0 hsl(174,5%,70%),
+	                 0 4px 0 hsl(174,5%,66%),
+	                 0 5px 0 hsl(174,5%,64%),
+	                 0 6px 0 hsl(174,5%,62%),
+	                 0 7px 0 hsl(174,5%,61%),
+	                 0 8px 0 hsl(174,5%,60%),
+	
+	                 0 0 5px rgba(0,0,0,.05),
+	                0 1px 3px rgba(0,0,0,.2),
+	                0 3px 5px rgba(0,0,0,.2),
+	               0 5px 10px rgba(0,0,0,.2),
+	              0 10px 10px rgba(0,0,0,.2),
+	              0 20px 20px rgba(0,0,0,.3);
+                }
+
+                &.txt4 {
+                font-size: 70px;
+                font-weight: 900;
+                color: #38bdf8;
+                text-transform: uppercase;
+
+                text-shadow:
+                    2px 2px 0 #0284c7,
+                    4px 4px 0 #0369a1,
+                    6px 6px 0 #075985,
+                    8px 8px 0 #0c4a6e,
+                    10px 10px 15px rgba(0, 0, 0, 0.7);
+                }
+            }
+        }
+    </style>
+  </head>
+  <body class="css">
+    <a href="index.html" class="btn-home">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        fill="#000000"
+        viewBox="0 0 256 256"
+      >
+        <path
+          d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm48-88a8,8,0,0,1-8,8H107.31l18.35,18.34a8,8,0,0,1-11.32,11.32l-32-32a8,8,0,0,1,0-11.32l32-32a8,8,0,0,1,11.32,11.32L107.31,120H168A8,8,0,0,1,176,128Z"
+        ></path>
+      </svg>
+    </a>
+    <main>
+      <header class="mainmenu">
+        <h1>30-text-shadow</h1>
+        <h4>EN: Property that adds shadow effects directly to text content, taking values for offset, blur radius, and color.
+            ES: Propiedad que añade efectos de sombra directamente al texto, aceptando valores de desplazamiento, radio de desenfoque y color</h4>
+      </header>
+      <section>
+            <p class="txt txt1">ADSO</p>
+            <p class="txt txt2">C.P.I.C</p>
+            <p class="txt txt3">SENA</p>
+            <p class="txt txt4">Caldas</p>
+      </section>
+    </main>
+  </body>
+</html>
