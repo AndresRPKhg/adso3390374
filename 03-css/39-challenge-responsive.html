@@ -5,61 +5,220 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>39-Challenge-Responsive</title>
     <style>
+        * {
+            transition: all 0.5s ease;
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             min-height: 100vh;
-            padding: 2rem;
+            padding: 2rem 1rem; 
             background: linear-gradient(rgba(3, 13, 30, 0.281), rgba(3, 13, 30, 0.9)),
                 url("imgs/D2.jpg") center / cover fixed;
             color: #fff;
             font-family: Arial, sans-serif;
+            overflow-x: hidden; 
         }
+
+        main {
+            margin: 0 auto;
+            width: 100%; 
+            max-width: 1280px; 
+        }
+
+        header {
+            text-align: center;
+        }
+        header img {
+            width: 100%;
+            max-width: 380px; 
+            filter: drop-shadow(0 0 12px #fff);
+        }
+
         
+        section.fotos {
+            margin-top: 4rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 1.05rem;
+        }
+
+        figure.personaje {
+            margin: 0;
+            padding: 0;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+            border-radius: 8px; 
+        }
+
+        figure.personaje.personaje1 { background: url(imgs/oryx.jpg) no-repeat center / cover; }
+        figure.personaje.personaje2 { background: url(imgs/lordshaxx.jpg) no-repeat center / cover; }
+        figure.personaje.personaje3 { background: url(imgs/savathun.jpg) no-repeat center / cover; }
+        figure.personaje.personaje4 { background: url(imgs/Osiris.jpg) no-repeat center / cover; }
+
+        figure.personaje h3 {
+            background: #000d;
+            padding: 1rem;
+            position: absolute;
+            height: 100px;
+            bottom: -2rem;
+            width: 100%; 
+            margin: 0;
+            left: 0;
+            text-align: center;
+        }
+
+        figure.personaje:hover {
+            transform: scale(1.05) translateY(-0.5rem);
+            z-index: 10;
+        }
+
+        
+        section.info {
+            margin-top: 4rem;
+            display: flex; 
+            justify-content: center;
+        }
+
+        section.info:last-of-type {
+            margin-bottom: 4rem;
+        }
+
+        .tarjeta-info {
+            display: flex; 
+            flex-direction: row;
+            gap: 2rem;
+            width: 100%;
+            background-color: #03030373; 
+            border-radius: 25px;
+            padding: 30px;
+        }
+
+        
+        .contenedor-imagen-tarjeta {
+            width: 300px;
+            flex-shrink: 0; 
+        }
+
+        figure.personaje5, figure.personaje6 {
+            margin: 0;
+            padding: 0;
+            height: 320px;
+            width: 100%;
+            background: url(imgs/saint_14.jpg) no-repeat center / cover;
+            position: relative;
+            overflow: hidden;
+            border-radius: 24px;
+        }
+
+        figure.personaje6 {
+            background: url(imgs/cayde-6.jpg) no-repeat center / cover;
+        }
+
+        .texto-info {
+            flex-grow: 1;
+        }
+
+        .texto-info h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: #fff;
+            text-align: center;
+        }
+
+        .texto-info p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #ddd;
+            margin-bottom: 0;
+            text-align: center;
+        }
+
+       
+        @media (max-width: 900px) {
+            .tarjeta-info {
+                flex-direction: column; 
+                gap: 1.5rem;
+                padding: 20px;
+            }
+
+            .contenedor-imagen-tarjeta {
+                width: 100%; 
+            }
+
+            figure.personaje5, figure.personaje6 {
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0.5rem; 
+            }
+
+            section.fotos {
+                grid-template-columns: 1fr; 
+            }
+            
+            .tarjeta-info {
+                border-radius: 15px;
+            }
+
+            .texto-info p {
+                text-align: justify; 
+            }
+        }
     </style>
 </head>
 <body>
     <main>
         <header>
-            <h1>Destiny 2</h1>
-            <p>Personajes del universo Destiny</p>
-            <img src="imgs/D2L.png" alt="">
+            <img src="imgs/D2L.png" alt="Destiny 2 Logo">
         </header>
 
-        <ul class="fotos">
-            <li>
-                <figure class="personaje personaje1">
-                    <img src="imgs/oryx.jpg" alt="Oryx, el Rey de los Poseídos">
-                    <h3>Oryx, Rey de los poseídos</h3>
-                </figure>
-            </li>
-            <li>
-                <figure class="personaje personaje2">
-                    <img src="imgs/lordshaxx.jpg" alt="Lord Shaxx">
-                    <h3>Lord Shaxx</h3>
-                </figure>
-            </li>
-            <li>
-                <figure class="personaje personaje3">
-                    <img src="imgs/savathun.jpg" alt="Savathûn, la Reina Bruja">
-                    <h3>Savathûn, la Reina Bruja</h3>
-                </figure>
-            </li>
-            <li>
-                <figure class="personaje personaje4">
-                    <img src="imgs/Osiris.jpg" alt="Osiris, hechicero de la Vanguardia">
-                    <h3>Osiris, hechicero de la Vanguardia</h3>
-                </figure>
-            </li>
-        </ul>
-
-        <section>
-            <h2>Escritorio: más de 1280 px</h2>
-            <h2>Tablet: de 881 a 1280 px</h2>
-            <h2>Móvil: hasta 880 px</h2>
-            <p>
-                Explora algunos de los personajes más conocidos de Destiny. El diseño se adapta al tamaño de la pantalla: las cuatro imágenes aparecen en una fila en escritorio, en dos columnas en tablet y una debajo de otra en móvil.
-            </p>
+        <section class="fotos">
+            <figure class="personaje personaje1">
+                <h3>Oryx, Rey de los poseídos</h3>
+            </figure>
+            <figure class="personaje personaje2">
+                <h3>Lord Shaxx</h3>
+            </figure>
+            <figure class="personaje personaje3">
+                <h3>Savathûn, la Reina Bruja</h3>
+            </figure>
+            <figure class="personaje personaje4">
+                <h3>Osiris, hechicero de la Vanguardia</h3>
+            </figure>
         </section>
+
+       
+        <section class="info">
+            <div class="tarjeta-info">
+                <div class="contenedor-imagen-tarjeta">
+                    <figure class="personaje5"></figure>
+                </div>
+                <div class="texto-info">
+                    <h3>Saint-14</h3>
+                    <p>Saint-14 es un legendario Titán Exo y uno de los mayores héroes en la historia de Destiny. Tras ser resucitado por el Viajero, dedicó su vida a proteger a la humanidad durante sus años más oscuros. Se consagró como mito en la Batalla de los Seis Frentes y la Brecha Crepuscular, donde eliminó al Kell de los Demonios a cabezazos. Un Guardián del futuro (el jugador) viajó en el tiempo para entregarle la mítica escopeta Paradoja Perfecta, inspirándolo a convertirse en el símbolo de esperanza que la Última Ciudad tanto necesitaba. Más tarde, buscando a su compañero Osiris, quedó atrapado en el Bosque Infinito de los Vex; allí combatió durante siglos hasta que una Mente Vex drenó su Luz, provocando su aparente muerte. Sin embargo, el jugador alteró las líneas temporales, evitando su caída y trayéndolo de regreso al presente de la Ciudad. A su retorno, asumió el rol de supervisor de las Pruebas de Osiris y afrontó el trauma de su pasado como "el monstruo" de los Caídos. Finalmente, luchó en la primera línea contra El Testigo, desplegando su emblemático escudo de vacío para asegurar la victoria final de la Luz.</p>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="info">
+            <div class="tarjeta-info">
+                <div class="contenedor-imagen-tarjeta">
+                    <figure class="personaje6"></figure>
+                </div>
+                <div class="texto-info">
+                    <h3>Cayde-6</h3>
+                    <p>Durante la Edad de Oro, Cayde fue un soldado humano que contrajo enormes deudas de juego. Para saldarlas y proteger a su hijo, "Ace", vendió su conciencia a la corporación Clovis Bray y fue convertido en un Exo. Siglos después del Colapso, su Espectro, Sundance, lo resucitó sin recuerdos, dejando como únicas pistas de su pasado un diario y el As de Picas. Como Guardián Cazador, vivió de aventura en aventura hasta que la muerte de su amigo Andal Brask a manos del mercenario Taniks lo obligó a asumir el puesto de Líder de la Vanguardia. Aunque odiaba el papeleo y prefería la acción, fue una pieza clave para derrotar a enemigos como Oryx, el Rey de los Poseídos. Su carácter temerario lo llevó a sofocar un motín en la Prisión de los Ancianos, donde cayó en una emboscada de los Despreciados. Allí, tras perder a su Espectro por un disparo de francotirador, fue ejecutado con su propia pistola por Uldren Sov. Años más tarde, en La Forma Final, el deseo de Cuervo al dragón Riven trajo temporalmente de vuelta su alma dentro del Viajero. En ese reino, ayudó a derrotar al Testigo y finalmente sacrificó su propia Luz para revivir al Espectro de nuestro Guardián. Así, Cayde-6 cumplió su propósito y descansó en paz para siempre.</p>
+                </div>
+            </div>
+        </section>
+
     </main>
 </body>
 </html>
